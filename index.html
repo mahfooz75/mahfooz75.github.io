@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hadiya Collections | Premium Ethnic Wear for Women</title>
-    <meta name="description" content="महिलाओं के लिए शानदार एथनिक ड्रेस कलेक्शन">
+    <title>SelfTechLearner | YouTube Channel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --maroon: #6D001A;
-            --maroon-light: #8B0024;
-            --gold: #D4AF37;
-            --gold-light: #E5C76B;
-            --cream: #F8F1E7;
-            --cream-dark: #EDE5D8;
-            --brown: #3D2314;
-            --white: #FFFFFF;
-            --text-dark: #1A1A1A;
-            --text-light: #5A5A5A;
-            --whatsapp: #25D366;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --surface: #ffffff;
+            --accent-primary: #2563eb;
+            --accent-secondary: #7c3aed;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
         * {
@@ -35,166 +32,87 @@
         }
 
         body {
-            font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
-            background-color: var(--cream);
-            color: var(--text-dark);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* Header */
-        header {
+        /* Navigation */
+        nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(248, 241, 231, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(109, 0, 26, 0.1);
+            padding: 20px 0;
+            z-index: 100;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            background: transparent;
         }
 
-        .header-inner {
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            padding: 12px 0;
+        }
+
+        nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 3px solid var(--gold);
-        }
-
-        .logo-icon i {
-            color: var(--gold);
             font-size: 24px;
-        }
-
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
             font-weight: 700;
-            color: var(--maroon);
-        }
-
-        .logo-text span {
-            color: var(--gold);
-        }
-
-        nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
+            color: var(--text-primary);
             text-decoration: none;
-            color: var(--text-dark);
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
             font-weight: 500;
             font-size: 15px;
             position: relative;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
 
-        nav a::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -4px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gold);
-            transition: width 0.3s;
+            background: var(--accent-primary);
+            transition: width 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--maroon);
+        .nav-links a:hover {
+            color: var(--text-primary);
         }
 
-        nav a:hover::after {
+        .nav-links a:hover::after {
             width: 100%;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .search-box {
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.8);
-            border: 2px solid transparent;
-            border-radius: 25px;
-            padding: 8px 15px;
-            transition: all 0.3s;
-        }
-
-        .search-box:focus-within {
-            border-color: var(--gold);
-            background: white;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
-        }
-
-        .search-box input {
-            border: none;
-            background: transparent;
-            outline: none;
-            font-size: 14px;
-            width: 180px;
-        }
-
-        .search-box i {
-            color: var(--text-light);
-        }
-
-        .whatsapp-btn {
-            background: var(--whatsapp);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-        }
-
-        .whatsapp-btn:hover {
-            background: #1DA851;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-        }
-
-        /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--maroon);
         }
 
         /* Hero Section */
@@ -202,41 +120,86 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+            justify-content: center;
             position: relative;
-            overflow: hidden;
-            padding-top: 80px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></svg>');
-            background-size: 200px;
-            opacity: 0.5;
+            padding: 120px 0;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
         }
 
         .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            text-align: center;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
-        .hero-text {
-            animation: fadeInUp 1s ease-out;
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .hero .subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -244,1325 +207,790 @@
             }
         }
 
-        .hero-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: var(--brown);
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
+        /* Sections */
+        section {
+            padding: 100px 0;
         }
 
-        .hero h1 {
-            font-size: 56px;
-            color: var(--maroon);
-            line-height: 1.1;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-
-        .hero-tagline {
-            font-size: 20px;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .btn-primary {
-            background: var(--maroon);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: 2px solid var(--maroon);
-            transition: all 0.3s;
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            color: var(--maroon);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(109, 0, 26, 0.3);
-        }
-
-        .btn-whatsapp {
-            background: var(--whatsapp);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
-        }
-
-        .btn-whatsapp:hover {
-            background: #1DA851;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-        }
-
-        .hero-features {
-            display: flex;
-            gap: 40px;
-        }
-
-        .feature-item {
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
             text-align: center;
+            margin-bottom: 48px;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
         }
 
-        .feature-item i {
+        /* About Section */
+        .about {
+            background: var(--bg-primary);
+        }
+
+        .about-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px;
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .about-content h3 {
             font-size: 28px;
-            color: var(--gold);
+            font-weight: 700;
             margin-bottom: 8px;
+            color: var(--text-primary);
         }
 
-        .feature-item p {
-            font-size: 13px;
-            color: var(--text-light);
-        }
-
-        .hero-image {
-            position: relative;
-            animation: fadeInRight 1s ease-out 0.3s both;
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .hero-img-main {
-            width: 100%;
-            max-width: 500px;
-            height: 600px;
-            background: linear-gradient(135deg, var(--maroon-light) 0%, var(--maroon) 100%);
-            border-radius: 200px 200px 20px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: auto;
-            position: relative;
-            box-shadow: 20px 20px 60px rgba(109, 0, 26, 0.3);
-        }
-
-        .hero-img-main::before {
-            content: '';
-            position: absolute;
-            inset: 5px;
-            border: 2px solid var(--gold);
-            border-radius: 195px 195px 15px 15px;
-        }
-
-        .hero-img-main i {
-            font-size: 150px;
-            color: var(--gold);
-            opacity: 0.5;
-        }
-
-        .hero-decoration {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            border: 3px solid var(--gold);
-            border-radius: 50%;
-            top: -20px;
-            right: -20px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.7; }
-        }
-
-        /* Categories Section */
-        .categories {
-            padding: 80px 0;
-            background: var(--white);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 42px;
-            color: var(--maroon);
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            color: var(--text-light);
-            font-size: 16px;
-        }
-
-        .section-header .hindi-text {
-            font-family: 'Noto Sans Devanagari', sans-serif;
-            color: var(--brown);
-            font-size: 18px;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .category-card {
-            position: relative;
-            height: 350px;
-            border-radius: 20px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.4s;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(109, 0, 26, 0.2);
-        }
-
-        .category-bg {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .category-bg i {
-            font-size: 80px;
-            color: var(--gold);
-            opacity: 0.6;
-        }
-
-        .category-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(109, 0, 26, 0.9), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 25px;
-        }
-
-        .category-card h3 {
-            color: white;
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-
-        .category-card p {
-            color: rgba(255, 255, 255, 0.8);
+        .about-content .tagline {
+            color: var(--accent-primary);
             font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 16px;
         }
 
-        .category-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .about-content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.7;
         }
 
-        .category-icon i {
-            color: var(--brown);
-            font-size: 20px;
-        }
-
-        /* Products Section */
-        .products {
-            padding: 80px 0;
-            background: var(--cream);
-        }
-
-        .products-grid {
+        /* Videos Section */
+        .videos-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
 
-        .product-card {
-            background: var(--white);
-            border-radius: 20px;
+        .video-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             overflow: hidden;
-            transition: all 0.4s;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-thumbnail {
+            height: 160px;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
             position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(109, 0, 26, 0.15);
-        }
-
-        .product-image {
-            height: 280px;
-            background: linear-gradient(135deg, var(--cream-dark), var(--cream));
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        .product-image i {
-            font-size: 80px;
-            color: var(--gold);
-            opacity: 0.5;
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--gold);
-            color: var(--brown);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .product-wishlist {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 40px;
-            height: 40px;
-            background: var(--white);
+        .play-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--accent-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
-        .product-wishlist:hover {
-            background: var(--maroon);
-            color: white;
+        .video-card:hover .play-icon {
+            transform: scale(1.05);
         }
 
-        .product-wishlist i {
-            color: var(--maroon);
-            font-size: 18px;
+        .play-icon::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 16px solid #ffffff;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            margin-left: 4px;
         }
 
-        .product-wishlist:hover i {
-            color: white;
-        }
-
-        .product-info {
+        .video-info {
             padding: 20px;
         }
 
-        .product-info h3 {
-            font-size: 18px;
-            color: var(--text-dark);
+        .video-info h4 {
+            font-size: 16px;
+            font-weight: 600;
             margin-bottom: 8px;
+            line-height: 1.4;
+            color: var(--text-primary);
         }
 
-        .product-info p {
-            color: var(--text-light);
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--bg-secondary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 16px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
             font-size: 14px;
-            margin-bottom: 15px;
         }
 
-        .product-price {
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            background: var(--bg-primary);
+        }
+
+        .contact-subtitle {
+            color: var(--text-secondary);
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            box-shadow: var(--shadow);
+        }
+
+        .social-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            padding: 32px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        footer .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .price {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--maroon);
-        }
-
-        .price span {
+        footer p {
+            color: var(--text-secondary);
             font-size: 14px;
-            color: var(--text-light);
-            text-decoration: line-through;
-            margin-left: 8px;
         }
 
-        .btn-order {
-            background: var(--whatsapp);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-        }
-
-        .btn-order:hover {
-            background: #1DA851;
-        }
-
-        /* Why Choose Us */
-        .why-us {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-light) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .why-us::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="2" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1.5" fill="white" opacity="0.1"/></svg>');
-        }
-
-        .why-us .section-header h2 {
-            color: white;
-        }
-
-        .why-us .section-header p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .why-us-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .why-us-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .why-us-card:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .why-us-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gold);
-            border-radius: 50%;
+        .back-to-top {
+            width: 44px;
+            height: 44px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
         }
 
-        .why-us-icon i {
-            font-size: 30px;
-            color: var(--brown);
+        .back-to-top:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
         }
 
-        .why-us-card h3 {
-            color: white;
-            font-size: 20px;
-            margin-bottom: 10px;
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
         }
 
-        .why-us-card p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background: var(--white);
-        }
-
-        .testimonials-slider {
-            display: flex;
-            gap: 25px;
-            overflow-x: auto;
-            padding: 20px 0;
-            scroll-snap-type: x mandatory;
-        }
-
-        .testimonials-slider::-webkit-scrollbar {
-            display: none;
-        }
-
-        .testimonial-card {
-            min-width: 350px;
-            background: var(--cream);
-            border-radius: 20px;
-            padding: 30px;
-            scroll-snap-align: start;
-            border: 2px solid var(--gold);
-            transition: all 0.3s;
-        }
-
-        .testimonial-card:hover {
-            box-shadow: 0 15px 40px rgba(109, 0, 26, 0.1);
-        }
-
-        .testimonial-quote {
-            font-size: 40px;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-
-        .testimonial-text {
-            color: var(--text-light);
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            background: var(--maroon);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-        }
-
-        .author-info h4 {
-            color: var(--text-dark);
-            font-size: 16px;
-            margin-bottom: 3px;
-        }
-
-        .author-info p {
-            color: var(--text-light);
-            font-size: 13px;
-        }
-
-        .testimonial-rating {
-            color: var(--gold);
-            font-size: 14px;
-            margin-top: 8px;
-        }
-
-        /* Festival Offer Banner */
-        .festival-offer {
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .festival-offer::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L60 40 L100 40 L70 60 L80 100 L50 80 L20 100 L30 60 L0 40 L40 40 Z" fill="white" opacity="0.1"/></svg>');
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .festival-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .festival-offer h2 {
-            font-size: 48px;
-            color: var(--brown);
-            margin-bottom: 15px;
-        }
-
-        .festival-offer p {
-            font-size: 20px;
-            color: var(--brown);
-            margin-bottom: 25px;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--brown);
-            color: white;
-            padding: 60px 0 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand .logo-text {
-            color: white;
-            margin-bottom: 15px;
-        }
-
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.3s;
-        }
-
-        .footer-social a:hover {
-            background: var(--gold);
-            color: var(--brown);
-        }
-
-        .footer-column h4 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: var(--gold);
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-column ul li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-
-        .footer-column ul li a:hover {
-            color: var(--gold);
-        }
-
-        .footer-contact p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-contact p i {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 25px;
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
-        }
-
-        /* Floating WhatsApp */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 999;
-        }
-
-        .floating-whatsapp a {
-            width: 60px;
-            height: 60px;
-            background: var(--whatsapp);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 28px;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
-            transition: all 0.3s;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .floating-whatsapp a:hover {
-            transform: scale(1.1);
-        }
-
-        /* Form Input Focus */
-        input:focus, textarea:focus {
-            border-color: var(--maroon) !important;
-            box-shadow: 0 0 0 3px rgba(109, 0, 26, 0.1);
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-image {
-                order: -1;
-            }
-
-            .hero-img-main {
-                margin: 0 auto;
-                width: 300px;
-                height: 400px;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-features {
-                justify-content: center;
-            }
-
-            .categories-grid,
-            .products-grid,
-            .why-us-grid {
+            .videos-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .footer-grid {
+            .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 768px) {
-            .header-inner {
-                padding: 10px 0;
-            }
-
-            .logo-text {
-                font-size: 20px;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .search-box {
-                display: none;
-            }
-
-            .whatsapp-btn span {
-                display: none;
-            }
-
             .hero h1 {
-                font-size: 36px;
+                font-size: 40px;
             }
 
-            .hero-tagline {
-                font-size: 16px;
+            .hero .subtitle {
+                font-size: 18px;
             }
 
             .hero-buttons {
                 flex-direction: column;
+                align-items: center;
             }
 
-            .section-header h2 {
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-title {
                 font-size: 28px;
             }
 
-            .categories-grid,
-            .products-grid,
-            .why-us-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .category-card {
-                height: 250px;
-            }
-
-            .product-card {
-                max-width: 320px;
-                margin: 0 auto;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
+            .about-card {
+                flex-direction: column;
                 text-align: center;
+                padding: 32px;
             }
 
-            .footer-social {
-                justify-content: center;
+            .profile-image {
+                width: 140px;
+                height: 140px;
+                font-size: 36px;
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            footer .container {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
+    <nav>
         <div class="container">
-            <div class="header-inner">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <div class="logo-text">Hadiya <span>Collections</span></div>
-                </div>
-                <nav>
-                    <a href="#home">Home</a>
-                    <a href="#collection">Collection</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-                <div class="header-actions">
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Search products...">
-                    </div>
-                    <a href="https://wa.me/917977566860" class="whatsapp-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>Order Now</span>
-                    </a>
-                    <div class="menu-toggle">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                </div>
+            <a href="#" class="logo">Self<span>Tech</span>Learner</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>SelfTechLearner</h1>
+            <p class="subtitle">Tech tutorials, coding guides, and learning adventures</p>
+            <div class="hero-buttons">
+                <a href="https://www.youtube.com/@selftechlearner" target="_blank" class="btn btn-primary">Subscribe</a>
+                <a href="#videos" class="btn btn-outline">Watch Videos</a>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="about" id="about">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge">✨ New Collection 2026</div>
-                    <h1>Elegant Ethnic <span>Wear</span></h1>
-                    <p class="hero-tagline">महिलाओं के लिए शानदार एथनिक ड्रेस कलेक्शन</p>
-                    <div class="hero-buttons">
-                        <a href="#collection" class="btn-primary">
-                            <i class="fas fa-eye"></i>
-                            View Collection
-                        </a>
-                        <a href="https://wa.me/917977566860" class="btn-whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                            WhatsApp Order
-                        </a>
-                    </div>
-                    <div class="hero-features">
-                        <div class="feature-item">
-                            <i class="fas fa-shipping-fast"></i>
-                            <p>Free Shipping</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-gem"></i>
-                            <p>Premium Quality</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-undo"></i>
-                            <p>Easy Returns</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="hero-img-main">
-                        <i class="fas fa-female"></i>
-                    </div>
-                    <div class="hero-decoration"></div>
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-card reveal">
+                <div class="profile-image">ST</div>
+                <div class="about-content">
+                    <h3>SelfTechLearner</h3>
+                    <p class="tagline">Tech Enthusiast & Content Creator</p>
+                    <p>Passionate about breaking down complex tech concepts into easy-to-understand tutorials. I believe learning should be accessible to everyone. Join me on this journey of continuous discovery and skill-building in the world of technology.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="categories" id="collection">
+    <section class="videos" id="videos">
         <div class="container">
-            <div class="section-header">
-                <h2>Our Collections</h2>
-                <p class="hindi-text">हमारे कलेक्शन</p>
-            </div>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-bg">
-                        <i class="fas fa-tshirt"></i>
+            <h2 class="section-title reveal">Featured Videos</h2>
+            <div class="videos-grid">
+                <a href="https://www.youtube.com/watch?v=cKttIFKTLOc" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
                     </div>
-                    <div class="category-overlay">
-                        <div class="category-icon">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                        <h3>Cotton Printed Suits</h3>
-                        <p>Comfortable & stylish daily wear</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-bg">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="category-overlay">
-                        <div class="category-icon">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                        <h3>Daily Wear Suits</h3>
-                        <p>Perfect for everyday elegance</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-bg">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="category-overlay">
-                        <div class="category-icon">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                        <h3>Pakistani Suits</h3>
-                        <p>Traditional grace & elegance</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-bg">
-                        <i class="fas fa-dress"></i>
-                    </div>
-                    <div class="category-overlay">
-                        <div class="category-icon">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                        <h3>Ethnic Dresses</h3>
-                        <p>Festive & celebration wear</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="products" id="products">
-        <div class="container">
-            <div class="section-header">
-                <h2>New Arrivals</h2>
-                <p class="hindi-text">नए डिज़ाइन हर हफ्ते</p>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-female"></i>
-                        <span class="product-badge">New</span>
-                        <div class="product-wishlist">
-                            <i class="far fa-heart"></i>
+                    <div class="video-info">
+                        <h4>Java Method Overloading Explained with Examples - Part 1</h4>
+                        <div class="video-meta">
+                            <span>Java OOPs</span>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h3>Floral Print Cotton Suit</h3>
-                        <p>Cotton Printed | Free Size</p>
-                        <div class="product-price">
-                            <div class="price">₹1,899 <span>₹2,499</span></div>
-                            <a href="https://wa.me/917977566860?text=I want to order Floral Print Cotton Suit" class="btn-order" target="_blank">
-                                <i class="fab fa-whatsapp"></i> Order
-                            </a>
+                </a>
+                <a href="https://www.youtube.com/watch?v=TyuMJ31KVEc" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Java Method Overloading Explained with Examples  Part 2</h4>
+                        <div class="video-meta">
+                            <span>Java OOPs</span>
                         </div>
                     </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-female"></i>
-                        <span class="product-badge">Best Seller</span>
-                        <div class="product-wishlist">
-                            <i class="far fa-heart"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=hVmp4f0Khno" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Java Method Overloading Explained with Examples - Part 3</h4>
+                        <div class="video-meta">
+                            <span>Java OOPs</span>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h3>Embroidered Pakistani Suit</h3>
-                        <p>Pakistani | Georgette</p>
-                        <div class="product-price">
-                            <div class="price">₹2,499 <span>₹3,199</span></div>
-                            <a href="https://wa.me/917977566860?text=I want to order Embroidered Pakistani Suit" class="btn-order" target="_blank">
-                                <i class="fab fa-whatsapp"></i> Order
-                            </a>
+                </a>
+                <a href="https://www.youtube.com/watch?v=8XvJnkEm2Gw" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Java | Method Overloading | Explained | Examples | Part 4</h4>
+                        <div class="video-meta">
+                            <span>Java OOPs</span>
                         </div>
                     </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-female"></i>
-                        <span class="product-badge">Trending</span>
-                        <div class="product-wishlist">
-                            <i class="far fa-heart"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=gYYOYxhX6ew" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Java | Method Overloading | Explained | Examples | Part 5</h4>
+                        <div class="video-meta">
+                            <span>Java OOPs</span>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h3>Daily Wear Churidar Set</h3>
-                        <p>Cotton | Regular Fit</p>
-                        <div class="product-price">
-                            <div class="price">₹1,499 <span>₹1,999</span></div>
-                            <a href="https://wa.me/917977566860?text=I want to order Daily Wear Churidar Set" class="btn-order" target="_blank">
-                                <i class="fab fa-whatsapp"></i> Order
-                            </a>
+                </a>
+                <a href="https://www.youtube.com/watch?v=n9griuVpurA" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Java | OOPS | Method Overriding | Introduction</h4>
+                        <div class="video-meta">
+                            <span>Java OOPs</span>
                         </div>
                     </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-female"></i>
-                        <span class="product-badge">New</span>
-                        <div class="product-wishlist">
-                            <i class="far fa-heart"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=GgwfBh3M46g" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Java | OOPS | Method Overriding | Rule | Explained with Examples | Part-1</h4>
+                        <div class="video-meta">
+                            <span>Java OOPs</span>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h3>Festive Wear Anarkali</h3>
-                        <p>Silk | Heavy Work</p>
-                        <div class="product-price">
-                            <div class="price">₹3,999 <span>₹5,499</span></div>
-                            <a href="https://wa.me/917977566860?text=I want to order Festive Wear Anarkali" class="btn-order" target="_blank">
-                                <i class="fab fa-whatsapp"></i> Order
-                            </a>
+                </a>
+                <a href="https://www.youtube.com/watch?v=MlcBoQRTbw8" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Java | OOPS | Method Overriding | Rule | Explained with Examples | Part-2</h4>
+                        <div class="video-meta">
+                            <span>Java OOPs</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="why-us">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Choose Us</h2>
-                <p class="hindi-text">हमें क्यों चुनें</p>
-            </div>
-            <div class="why-us-grid">
-                <div class="why-us-card">
-                    <div class="why-us-icon">
-                        <i class="fas fa-gem"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=YcIdCoGQTqc" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
                     </div>
-                    <h3>Premium Quality</h3>
-                    <p> finest fabrics with excellent finishing</p>
-                </div>
-                <div class="why-us-card">
-                    <div class="why-us-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Unique Designs</h3>
-                    <p>Exclusive patterns you won't find elsewhere</p>
-                </div>
-                <div class="why-us-card">
-                    <div class="why-us-icon">
-                        <i class="fas fa-shipping-fast"></i>
-                    </div>
-                    <h3>Fast Delivery</h3>
-                    <p>Quick shipping across India</p>
-                </div>
-                <div class="why-us-card">
-                    <div class="why-us-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>We're always here to help you</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Customers Say</h2>
-                <p class="hindi-text">ग्राहकों की राय</p>
-            </div>
-            <div class="testimonials-slider">
-                <div class="testimonial-card">
-                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                    <p class="testimonial-text">"Absolutely love the quality! The cotton suits are so comfortable and the designs are beautiful. Will definitely order more!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><i class="fas fa-user"></i></div>
-                        <div class="author-info">
-                            <h4>Priya Sharma</h4>
-                            <p>Mumbai</p>
+                    <div class="video-info">
+                        <h4>Java | OOPS | Method Overriding | Exception Rule | Explained with Examples | Part-3</h4>
+                        <div class="video-meta">
+                            <span>Java OOPs</span>
                         </div>
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=o-MWaqCxtVk" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                    <p class="testimonial-text">"Best Pakistani suits collection! The embroidery work is outstanding. Highly recommended for ethnic wear lovers."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><i class="fas fa-user"></i></div>
-                        <div class="author-info">
-                            <h4>Meera Patel</h4>
-                            <p>Surat</p>
+                    <div class="video-info">
+                        <h4>Java | OOPS | Static Method Overriding | Method Hiding | Rule | Explained with Examples | Part-4</h4>
+                        <div class="video-meta">
+                            <span>Java OOPs</span>
                         </div>
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=opOKZcney7E" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                    <p class="testimonial-text">"Great customer service and fast delivery. The Anarkali suit I ordered for my sister's wedding was perfect!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><i class="fas fa-user"></i></div>
-                        <div class="author-info">
-                            <h4>Anjali Gupta</h4>
-                            <p>Delhi</p>
+                    <div class="video-info">
+                        <h4>Spring Boot SAGA Pattern: Best Practices for Transaction Management</h4>
+                        <div class="video-meta">
+                            <span>Spring Boot</span>
                         </div>
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=2v2jFNy2Q_U" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Festival Offer -->
-    <section class="festival-offer">
-        <div class="container">
-            <div class="festival-content">
-                <h2>🎉 Grand Festival Sale!</h2>
-                <p>Get up to 40% OFF on all Pakistani Suits & Ethnic Dresses</p>
-                <a href="https://wa.me/917977566860" class="btn-primary" style="display: inline-flex; margin: 0 auto; background: var(--brown); border-color: var(--brown);" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                    Shop Now
+                    <div class="video-info">
+                        <h4>How to Implement a Circuit Breaker in Your API Gateway</h4>
+                        <div class="video-meta">
+                            <span>Microservices</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=maFfsHBYu8Q" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Mastering Spring Cloud Gateway</h4>
+                        <div class="video-meta">
+                            <span>Spring Cloud</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=dvJlqXxXYxo" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Mastering Circuit Breaker Patterns: A Step-by-Step Implementation Guide!</h4>
+                        <div class="video-meta">
+                            <span>Microservices</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=IB4g5N73IEY" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Circuit Breaker configurations</h4>
+                        <div class="video-meta">
+                            <span>Microservices</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=Q3ObGuA8bG4" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Mastering the Circuit Breaker Pattern: Enhancing System Resilience</h4>
+                        <div class="video-meta">
+                            <span>System Design</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=hAKv4jsDTgM" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Complete Guide to Building a Config Server in Spring Boot - Part 1</h4>
+                        <div class="video-meta">
+                            <span>Spring Boot</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=rcfES8zTCmU" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Complete Guide to Building a Config Server in Spring Boot - Part 2</h4>
+                        <div class="video-meta">
+                            <span>Spring Boot</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=jDmsUT_ZT5g" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Mastering Config Server: Centralized Configuration for Microservices using Spring Boot and Kafka</h4>
+                        <div class="video-meta">
+                            <span>Spring Boot</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=Hnffs4pz7D8" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Microservices Service Discovery</h4>
+                        <div class="video-meta">
+                            <span>Microservices</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=kPZmvJOFvak" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Discovery Service Implementation</h4>
+                        <div class="video-meta">
+                            <span>Microservices</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=i2QIGMg_RqU" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Parking LLD</h4>
+                        <div class="video-meta">
+                            <span>Low Level Design</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=yjrZPWm2lrU" target="_blank" class="video-card reveal">
+                    <div class="video-thumbnail">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Parking LLD code</h4>
+                        <div class="video-meta">
+                            <span>Low Level Design</span>
+                        </div>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about" style="padding: 80px 0; background: var(--cream);">
+    <section class="stats" id="stats">
         <div class="container">
-            <div class="section-header">
-                <h2>About Hadiya Collections</h2>
-                <p class="hindi-text">हमारे बारे में</p>
-            </div>
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <p style="font-size: 18px; color: var(--text-light); line-height: 2;">
-                    Hadiya Collections offers stylish, comfortable and affordable ethnic wear for women.
-                    We specialize in cotton printed suits, Pakistani suits and daily wear collections.
-                    Our mission is to bring the finest ethnic fashion to every woman, combining traditional
-                    elegance with modern designs.
-                </p>
-                <p style="font-size: 18px; color: var(--text-light); line-height: 2; margin-top: 20px;">
-                    <strong style="color: var(--maroon);">महिलाओं के लिए स्टाइलिश, आरामदायक और किफायती एथनिक वियर।</strong>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact" style="padding: 80px 0; background: var(--white);">
-        <div class="container">
-            <div class="section-header">
-                <h2>Contact Us</h2>
-                <p class="hindi-text">हमसे संपर्क करें</p>
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start;">
-                <div>
-                    <div style="background: var(--cream); padding: 30px; border-radius: 20px; border: 2px solid var(--gold);">
-                        <h3 style="color: var(--maroon); margin-bottom: 20px; font-size: 22px;">Get in Touch</h3>
-                        <div style="color: var(--text-dark);">
-                            <p style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px; color: var(--text-dark);"><i class="fas fa-phone-alt" style="color: var(--maroon);"></i> +91 7977566860</p>
-                            <p style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px; color: var(--text-dark);"><i class="fab fa-whatsapp" style="color: var(--whatsapp);"></i> +91 7977566860</p>
-                            <p style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px; color: var(--text-dark);"><i class="fas fa-envelope" style="color: var(--maroon);"></i> info@hadiyacollections.com</p>
-                            <p style="display: flex; align-items: flex-start; gap: 12px; color: var(--text-dark);"><i class="fas fa-map-marker-alt" style="color: var(--maroon); margin-top: 4px;"></i>
-                                101 ए-विंग, चौधरी कम्पाउंड इको स्टे,<br>
-                                खड्डी रोड, मुंब्रा, ठाणे
-                            </p>
-                        </div>
-                        <div style="margin-top: 25px; display: flex; gap: 15px;">
-                            <a href="https://wa.me/917977566860" class="btn-whatsapp" style="padding: 12px 25px; border-radius: 25px; font-size: 14px;" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                            <a href="tel:+917977566860" class="btn-primary" style="padding: 12px 25px; border-radius: 25px; font-size: 14px; background: var(--maroon);" target="_blank">
-                                <i class="fas fa-phone"></i> Call Now
-                            </a>
-                        </div>
-                    </div>
+            <h2 class="section-title reveal">Channel Stats</h2>
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-icon">▶</div>
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Subscribers</div>
                 </div>
-                <div>
-                    <div style="background: var(--cream); padding: 30px; border-radius: 20px; border: 2px solid var(--gold);">
-                        <h3 style="color: var(--maroon); margin-bottom: 20px; font-size: 22px;">Send us a Message</h3>
-                        <form style="display: flex; flex-direction: column; gap: 15px;">
-                            <input type="text" placeholder="Your Name" style="padding: 15px; border: 2px solid #ddd; border-radius: 10px; background: white; outline: none; font-size: 14px; color: var(--text-dark);">
-                            <input type="email" placeholder="Your Email" style="padding: 15px; border: 2px solid #ddd; border-radius: 10px; background: white; outline: none; font-size: 14px; color: var(--text-dark);">
-                            <input type="tel" placeholder="Your Phone" style="padding: 15px; border: 2px solid #ddd; border-radius: 10px; background: white; outline: none; font-size: 14px; color: var(--text-dark);">
-                            <textarea placeholder="Your Message" rows="4" style="padding: 15px; border: 2px solid #ddd; border-radius: 10px; background: white; outline: none; font-size: 14px; color: var(--text-dark); resize: none;"></textarea>
-                            <button type="submit" style="background: var(--maroon); color: white; padding: 15px; border: none; border-radius: 25px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s; border: 2px solid var(--maroon);">
-                                <i class="fas fa-paper-plane"></i> Send Message
-                            </button>
-                        </form>
-                    </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon">📹</div>
+                    <div class="stat-number" data-target="120">0</div>
+                    <div class="stat-label">Videos</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon">👁</div>
+                    <div class="stat-number" data-target="250000">0</div>
+                    <div class="stat-label">Total Views</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-number" data-target="2">0</div>
+                    <div class="stat-label">Years Active</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Google Map Section -->
-    <section style="padding: 0 0 80px; background: var(--white);">
+    <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header">
-                <h2>Visit Our Store</h2>
-                <p class="hindi-text">हमारी दुकान पर आएं</p>
-            </div>
-            <div style="border-radius: 20px; overflow: hidden; border: 3px solid var(--gold);">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.987653210987!2d73.023456!3d19.205432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDEyJzI2LjYiTiA3M1KwMDEnMzMuNCJF!5e0!3m2!1sen!2sin!4v1234567890"
-                    width="100%"
-                    height="400"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy">
-                </iframe>
+            <h2 class="section-title reveal">Let's Connect</h2>
+            <p class="contact-subtitle reveal">Follow me on social media or drop a message</p>
+            <div class="social-links reveal">
+                <a href="https://www.youtube.com/@selftechlearner" target="_blank" class="social-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    YouTube
+                </a>
+                <a href="https://twitter.com/mahfoozahmad" target="_blank" class="social-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    Twitter
+                </a>
+                <a href="https://www.instagram.com/selftech_learner/" target="_blank" class="social-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    Instagram
+                </a>
+                <a href="https://www.linkedin.com/in/mahfooz-ahmad-0299758/" target="_blank" class="social-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/mahfooz75" target="_blank" class="social-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-7 0-9.5 0-3.053 0-4.837 1.243-5.765 3.5-.927 2.257-1.015 4.5-1.015 6.5 0 2 0 4.5 1.015 6.5.928 2.257 2.712 3.5 5.765 3.5 2.5 0 2.5 0 9.5 0 3.053 0 4.837-1.243 5.765-3.5.927-2.257 1.015-4.5 1.015-6.5 0-2 0-4.5-1.015-6.5-.928-2.257-2.712-3.5-5.765-3.5-2.5 0-2.5 0-9.5 0zm0 2.163c2.823 0 2.947 0 4.023.087 2.425.195 3.552 1.453 3.75 3.75.087 1.076.087 1.2.087 4.023 0 2.824 0 2.947-.087 4.023-.198 2.425-1.325 3.552-3.75 3.75-1.076.087-1.2.087-4.023.087-2.824 0-2.947 0-4.023-.087-2.425-.198-3.552-1.325-3.75-3.75-.087-1.076-.087-1.2-.087-4.023 0-2.824 0-2.947.087-4.023.198-2.425 1.325-3.552 3.75-3.75 1.076-.087 1.2-.087 4.023-.087zm0 5.837a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 2.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm6.406-6.405a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5z"/></svg>
+                    GitHub
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo-text">Hadiya Collections</div>
-                    <p>महिलाओं के लिए शानदार एथनिक ड्रेस कलेक्शन - Premium ethnic wear for women. Quality fabrics, elegant designs, affordable prices.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#collection">Collection</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Collections</h4>
-                    <ul>
-                        <li><a href="#">Cotton Printed Suits</a></li>
-                        <li><a href="#">Daily Wear Suits</a></li>
-                        <li><a href="#">Pakistani Suits</a></li>
-                        <li><a href="#">Ethnic Dresses</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column footer-contact">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-phone-alt"></i> +91 7977566860</p>
-                    <p><i class="fab fa-whatsapp"></i> +91 7977566860</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Mumbra, Thane</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Hadiya Collections. All Rights Reserved. | Made with ❤️ for Indian Women</p>
-            </div>
+            <p>&copy; 2024 SelfTechLearner. All rights reserved.</p>
+            <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <div class="floating-whatsapp">
-        <a href="https://wa.me/917977566860" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-
     <script>
-        // Smooth scroll for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const revealPoint = 150;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // Animated counter for stats
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let statsAnimated = false;
+
+        const animateStats = () => {
+            if (statsAnimated) return;
+
+            const statsSection = document.querySelector('.stats');
+            const statsSectionTop = statsSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (statsSectionTop < windowHeight - 100) {
+                statsAnimated = true;
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target'));
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            stat.textContent = Math.floor(current).toLocaleString();
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            stat.textContent = target.toLocaleString();
+                        }
+                    };
+
+                    updateCounter();
+                });
+            }
+        };
+
+        window.addEventListener('scroll', animateStats);
+        animateStats();
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
@@ -1573,21 +1001,6 @@
                     });
                 }
             });
-        });
-
-        // Wishlist toggle
-        document.querySelectorAll('.product-wishlist').forEach(btn => {
-            btn.addEventListener('click', function() {
-                this.querySelector('i').classList.toggle('far');
-                this.querySelector('i').classList.toggle('fas');
-                this.querySelector('i').classList.toggle('fa-heart');
-            });
-        });
-
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you! Your message has been sent. We will contact you soon.');
         });
     </script>
 </body>
