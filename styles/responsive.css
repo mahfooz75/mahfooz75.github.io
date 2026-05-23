@@ -1,0 +1,103 @@
+@media (max-width: 1024px) {
+    .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hero */
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero .subtitle {
+        font-size: 17px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quick-highlights {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /* Nav */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-primary);
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Sections */
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    /* About */
+    .about-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Experience */
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-item {
+        padding-left: 0;
+    }
+
+    .timeline-item::before {
+        display: none;
+    }
+
+    /* Blog */
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact */
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Footer */
+    footer .container {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
